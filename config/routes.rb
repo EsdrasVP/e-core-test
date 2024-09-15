@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   
-  resources :roles, only: [:create]
-  resources :enrollments, only: [:create, :show, :index]
+  resources :roles, only: [:create, :index]
+  resources :enrollments, only: [:create, :index]
+
+  get 'enrollments/find', to: 'enrollments#find'
 end

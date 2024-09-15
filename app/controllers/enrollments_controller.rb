@@ -8,7 +8,7 @@ class EnrollmentsController < ApplicationController
     end
   end
 
-  def show
+  def find
     enrollment = Enrollment.find_by(user_id: params[:user_id], team_id: params[:team_id])
     if enrollment
       render json: enrollment
